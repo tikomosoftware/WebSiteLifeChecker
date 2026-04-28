@@ -31,6 +31,7 @@ export async function checkWebsite(
 
     return {
       targetName: target.name,
+      targetUrl: target.url,
       isHealthy,
       responseTime,
       errorMessage: isHealthy
@@ -53,6 +54,7 @@ export async function checkWebsite(
 
     return {
       targetName: target.name,
+      targetUrl: target.url,
       isHealthy: false,
       responseTime,
       errorMessage,
@@ -78,6 +80,7 @@ export async function checkAllWebsites(
     }
     return {
       targetName: targets[index].name,
+      targetUrl: targets[index].url,
       isHealthy: false,
       responseTime: 0,
       errorMessage: `Check failed: ${result.reason}`,

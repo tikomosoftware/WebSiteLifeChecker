@@ -9,6 +9,7 @@ export interface WebsiteTarget {
 /** ヘルスチェック結果 */
 export interface HealthStatus {
   targetName: string;
+  targetUrl: string;
   isHealthy: boolean;
   responseTime: number;
   errorMessage: string | null;
@@ -19,6 +20,7 @@ export interface HealthStatus {
 export interface HealthLogEntry {
   timestamp: string;
   targetName: string;
+  targetUrl: string;
   isHealthy: boolean;
   responseTime: number;
   errorMessage: string | null;

@@ -158,6 +158,7 @@ export async function getLatestStatuses(): Promise<HealthStatus[]> {
     seen.add(row.target_name);
     statuses.push({
       targetName: row.target_name,
+      targetUrl: row.target_name,
       isHealthy: row.is_healthy,
       responseTime: row.response_time,
       errorMessage: row.error_message,
@@ -183,6 +184,7 @@ export async function setLatestStatuses(
       memHistory.push({
         timestamp: s.timestamp,
         targetName: s.targetName,
+        targetUrl: s.targetUrl,
         isHealthy: s.isHealthy,
         responseTime: s.responseTime,
         errorMessage: s.errorMessage,
@@ -196,7 +198,7 @@ export async function setLatestStatuses(
 
   // Supabase にログを挿入
   const rows = statuses.map((s) => ({
-    target_name: s.targetName,
+    target_name: s.targetUrl,
     is_healthy: s.isHealthy,
     response_time: s.responseTime,
     error_message: s.errorMessage,
@@ -238,6 +240,7 @@ export async function getHistory(
   return data.map((row) => ({
     timestamp: row.checked_at,
     targetName: row.target_name,
+    targetUrl: row.target_name,
     isHealthy: row.is_healthy,
     responseTime: row.response_time,
     errorMessage: row.error_message,
