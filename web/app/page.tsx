@@ -66,11 +66,11 @@ export default function DashboardPage() {
       {/* ヘッダー */}
       <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">
-            🌐 WebSite Life Checker
+          <h1 className="text-2xl font-bold tracking-tight">
+            ダッシュボード
           </h1>
           <p className="mt-1 text-gray-400">
-            Webサイトの死活監視ダッシュボード
+            Webサイトの死活監視
           </p>
         </div>
         <div className="flex gap-3">
