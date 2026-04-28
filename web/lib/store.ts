@@ -207,6 +207,8 @@ export async function setLatestStatuses(
 
   if (error) {
     console.error('Supabase insertLogs error:', error.message);
+  } else {
+    console.log(`[Supabase] Inserted ${rows.length} health log(s)`);
   }
 }
 
